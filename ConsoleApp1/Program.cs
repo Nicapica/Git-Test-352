@@ -10,24 +10,30 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("I am thinking of a number between 0 and 100");
-            Random random = new Random();
+            int x = 0;
+            int y = 0;
             int counter = 1;
             int guess = 0;
+            Console.WriteLine("pick a higher bound number and then a lower bound number for our number guessing game!");
+            Console.WriteLine("pick a higher bound number");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("pick a higher bound number");
+            y = Convert.ToInt32(Console.ReadLine());
+            Random random = new Random();
             int result = random.Next(0, 100);
-            Console.WriteLine("Guess what number I am thinking of");
+            Console.WriteLine("Guess the number!");
             while (guess != result)
             {
                 guess = Convert.ToInt32(Console.ReadLine());
 
                 if (guess > result)
                 {
-                    Console.WriteLine("Incorrect, guess is to high");
+                    Console.WriteLine("oops, guess is to high");
                     ++counter;
                 }
                 else if (guess < result)
                 {
-                    Console.WriteLine("Incorrect, guess is to low");
+                    Console.WriteLine("oops, guess is to low");
                     ++counter;
                 }
                 else if (guess == result)
